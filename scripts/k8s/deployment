@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resume-app
+  labels:
+    app: resume-app
+spec:
+  replicas: 2  # Number of pod replicas
+  selector:
+    matchLabels:
+      app: resume-app
+  template:
+    metadata:
+      labels:
+        app: resume-app
+    spec:
+      containers:
+        - name: resume-app
+          image: akiru091/resume-app:latest  # Change this to your Docker image
+          ports:
+            - containerPort: 5000  # Flask default port
+          env:
+            - name: FLASK_ENV
+              value: "production"
