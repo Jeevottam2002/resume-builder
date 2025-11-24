@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'akiru091/resume-builder:latest'
+        DOCKER_IMAGE = 'Jeevottam2002/resume-builder:latest'
         K8S_DEPLOYMENT = 'k8s/deployment.yaml'
         K8S_SERVICE = 'k8s/service.yaml'
     }
@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/akiru-91/resume-builder.git'
+                git branch: 'main', url: 'https://github.com/Jeevottam2002/resume-builder.git'
             }
         }
 
